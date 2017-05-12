@@ -53,6 +53,15 @@ _.filter = function(list, predicate) {
   } return result;
 };
 
+_.reject = function(list, predicate) {
+  var result = [];
+  for (var key in list) {
+    if (!predicate(list[key])) {
+      result.push(list[key]);
+    }
+  } return result;
+};
+
 if (typeof module !== 'undefined') {
   module.exports = _;
 }
