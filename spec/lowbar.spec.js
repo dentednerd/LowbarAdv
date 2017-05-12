@@ -90,16 +90,48 @@ describe('_', function() {
       it('is a function', function() {
         expect(_.each).to.be.a('function');
       });
-      it('should return an array of the same length', function() {
-        var result = _.each([1,2,3,4], function(n) {return n * 2;});
-        expect(result.length).to.equal(4);
+      it('should iterate through every item in the list', function() {
+        var count = 0;
+        function incrementCount() {
+          count++;
+        }
+        _.each([1,2,3,4,5], incrementCount);
+        expect(count).to.equal(5);
       });
-      it('should handle both objects and arrays', function() {
-        var result = _.each([1,2,3,4], function(n) {return n * 2;});
-        expect(result).to.eql([2,4,6,8]);
-        var result2 = _.each({a:1, b:2, c:3}, function(n) {return n * 2;});
+
+      // indexOf
+    describe('#indexOf', function() {
+      it('is a function', function() {
+        expect(_.indexOf).to.be.a('function');
+      });
+      it('should return a number', function () {
+        var result = _.indexOf([1,2,3]);
+        expect(result).to.be.a('number');
+      });
+      it('should return the index of the given value within the array', function() {
+        var result = _.indexOf([1,2,3], 2);
+        expect(result).to.equal(1);
+      });
+      it('should return the index of the given value starting at a given index within the array', function() {
+        var result = _.indexOf([1,2,3,4,5,6,7], 6, 2);
+        expect(result).to.equal(3);
+        var result2 = _.indexOf([1,1,1,1,1,1,2,2,2,2,3,3,3,3,4,4,5,5,5], 3, 9);
+        expect(result2).to.equal(1);
+      });
+    });
+
+    // filter
+    describe('#filter', function() {
+      it('is a function', function() {
+        expect(_.filter).to.be.a('function');
+      });
+      it('should return a list filtered by the predicate', function() {
+        var result = _.filter([1,2,3,4,5,6], function(num) {return num % 2 === 0;});
+        expect(result).to.eql([2,4,6]);
+        var result2 = _.filter({a:1, b:2, c:3, d:4, e:5, f:6}, function(num) {return num % 2 === 0;});
         expect(result2).to.eql([2,4,6]);
-      });
+      });   
+  });
 });
 });
 });

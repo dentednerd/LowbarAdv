@@ -31,19 +31,27 @@ _.last = function(array,num) {
 
 // each
 _.each = function(list, func) {
-  if (list[0]) {
-    var result = list.map(func);
-    return result;
-  }
-  else {
-    var res = [];
     for (var key in list) {
-      res.push(func(list[key]));
-    }
-    return res;
+      func(list[key]);
   }
 };
 
+// indexOf
+_.indexOf = function(array, value, isSorted) {
+  if (isSorted === undefined) { return array.indexOf(value); }
+  else {var sliced = array.slice(isSorted, array.length);
+        return sliced.indexOf(value);}
+};
+
+// filter
+_.filter = function(list, predicate) {
+  var result = [];
+  for (var key in list) {
+    if (predicate(list[key])) {
+      result.push(list[key]);
+    }
+  } return result;
+};
 
 if (typeof module !== 'undefined') {
   module.exports = _;
