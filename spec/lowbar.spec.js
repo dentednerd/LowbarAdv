@@ -54,10 +54,13 @@ describe('_', function() {
         var result = _.first([1, 2, 3, 4],7);
         expect(result).to.eql([1, 2, 3, 4]);
       });
+      // TODO: what is this testing, exactly?
       it('should receive an array', function() {
         var result = _.first([1, 2, 3, 4]);
         expect(result).to.equal(1);
       });
+
+      // TODO: what if a non-array is passed as first argument? This would fail at the slice so needs to be handled.
      });
      // last
      describe('#last', function() {
@@ -84,8 +87,12 @@ describe('_', function() {
         var result = _.last([1, 2, 3, 4]);
         expect(result).to.equal(4);
       });
+
+    // TODO: again, what if non-array is passed?
     });
     // each
+
+    // TODO: fix indentation here. This describe has other methods' blocks nested in it
     describe('#each', function() {
       it('is a function', function() {
         expect(_.each).to.be.a('function');
@@ -98,6 +105,8 @@ describe('_', function() {
         _.each([1,2,3,4,5], incrementCount);
         expect(count).to.equal(5);
       });
+      // TODO: also test this with an object
+      // TODO: what if no function passed to each, or incorrect first argument?
 
       // indexOf
     describe('#indexOf', function() {
@@ -130,7 +139,14 @@ describe('_', function() {
         expect(result).to.eql([2,4,6]);
         var result2 = _.filter({a:1, b:2, c:3, d:4, e:5, f:6}, function(num) {return num % 2 === 0;});
         expect(result2).to.eql([2,4,6]);
-      });   
+      });
+
+      // TODO: you can test that it doesn't modify the original list with a shallow equality check:
+      it('should not mutate the original array', function () {
+        const orig = [1,2,3,4,5,6];
+        const result = _.filter(orig, function(num) {return num % 2 === 0;});
+        expect(result).to.not.equal(orig);
+      });
   });
     describe('#reject', function() {
       it('is a function', function() {
@@ -139,9 +155,13 @@ describe('_', function() {
       it('should return a list filtered by the predicate', function() {
         var result = _.reject([1,2,3,4,5,6], function(num) {return num % 2 === 0;});
         expect(result).to.eql([1,3,5]);
+
+        // TODO: split into separate test explicity stating it rejects values from objects too.
         var result2 = _.reject({a:1, b:2, c:3, d:4, e:5, f:6}, function(num) {return num % 2 === 0;});
         expect(result2).to.eql([1,3,5]);
       });   
+
+      // TODO: what if there is no predicate etc. ?
   });
 });
 });
