@@ -349,4 +349,15 @@ describe('_', function() {
     });
   });
 
+// invoke
+  describe('#invoke', function () {
+    it('is a function', function () {
+      expect(_.invoke).to.be.a('function');
+    });
+
+    it('calls the method on each list value', function() {
+      expect(_.invoke([[5, 1, 7], [3, 2, 1]], 'sort')).to.eql([[1, 5, 7], [1, 2, 3]]);
+    });
+  });
+
 });
