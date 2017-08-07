@@ -232,6 +232,20 @@ _.sortedIndex = function (array, obj) {
     return low;
 };
 
+// flatten
+_.flatten = function (list) {
+  var result = [];
+  for (var i = 0; i < list.length; i++) {
+    if (Array.isArray(list[i])) {
+      var temp = _.flatten(list[i]);
+      temp.forEach(function(value) { result.push(value); });
+    } else {
+      result.push(list[i]);
+    }
+  }
+  return result;
+};
+
 if (typeof module !== 'undefined') {
   module.exports = _;
 }
