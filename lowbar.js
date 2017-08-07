@@ -110,6 +110,13 @@ _.pluck = function(list, propertyName) {
   return result;
 };
 
+// reduce
+_.reduce = function(list, iteratee, memo) {
+  for (let i = 0; i < list.length; i++) {
+    memo = iteratee(memo, list[i]);
+  }
+  return memo;
+};
 
 if (typeof module !== 'undefined') {
   module.exports = _;
