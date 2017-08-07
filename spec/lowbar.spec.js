@@ -432,7 +432,7 @@ describe('_', function() {
         });
         var test1 = _.binaryIndexOf.call([1, 2, 3], 2);
         var test2 = _.binaryIndexOf.call([1, 2, 3], 3);
-        it('returns the values from array that are not present in the other arrays.', function () {
+        it('returns the index at which value can be found in the array', function () {
             expect(test1).to.eql(1);
             expect(test2).to.eql(2);
         });

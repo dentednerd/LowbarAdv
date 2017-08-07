@@ -6,51 +6,15 @@ I have combined two Northcoders sprints, Lowbar and Advanced Lowbar, into one re
 
 ---
 
-## Goals
+## Instructions
 
-1. Continue practicing test-driven development (TDD) - both the process and the
-tools you'll be using to do it from now until the end of the course (and beyond).
-2. Get an 'inside view' of one of the most heavily used JavaScript libraries
-[underscore](http://underscorejs.org/) (11m downloads on NPM last month) and
-get used to reading its API documentation.
-3. Become accustomed to using [NPM](https://www.npmjs.com/) to find and install
-JS libraries
-4. Learn to effectively pair program and use Git/Github as a collaboration tool.
-5. Lay the foundations for understanding the functional style of programming that JS lends itself so well to
-
-## Workflow
-
-A key requirement for this sprint is to get used to collaborating on a codebase using git and Github. The workflow we will be using is as follows:
-
-1. To begin, person A in the pair should fork and clone the project. They should add their pair as a collaborator on the project. (Settings --> Collaborators & teams --> Add Collaborator)
-2. The other person (person B) should navigate to their pair's fork (e.g. githubUserA's fork will be located at: https://github.com/githubUserA/wk01-lowbar) and should clone githubUserA's repository.
-3. Both pairs will be working on **the same codebase**, i.e. code that lives in person A's repository. To avoid merge conflicts, you should avoid both working on your copies of the code at the same time and should be rigorous about sticking to the 'driving and navigating' model of pair programming.
-4. After every successful piece of functionality, the driver should add, commit and push their work. Use neat, uniformly formatted commit messages and never commit code that isn't working!
-
-  `$ git add lowbar.js`
-
-  `$ git add spec/lowbar.spec.js`
-
-  `$ git commit -m '[_.map] maps an array'`
-
-  `$ git push origin master`
-
-5. Then switch the driver and the navigator. The new driver, working on their own machine, should make sure their codebase is up to date by pulling:
-
-  `$ git pull origin master`
-
-6. The driver types until the next test is passing, at which point the adding, committing, pushing, switching and pulling process is repeated.
+1. Clone this repository to your local machine: `git clone https://github.com/dentednerd/LowbarAdv.git`
+2. Install the necessary NPM modules: `npm i`
+3. Run the tests for all the functions: `npm t`
 
 ---
 
-## Tasks
-
-The Lowbar Sprint involves reimplementing a JS library as if you were its author. For Part 1 of this sprint (we'll be coming back to this in week 2), you'll need to reimplement the following methods:
-
-## Core
-
-These are the core functions you should aim to get finished;
-
+## Core Functions
 1. identity
 2. first
 3. last
@@ -62,19 +26,44 @@ These are the core functions you should aim to get finished;
 9. map
 10. contains
 
-You should be heavily referencing the APIs of the following;
+### Extra Credit
+11. pluck
+12. reduce
+13. every
+14. some
+15. extends
+16. defaults
+
+## Advanced Functions
+
+17. once
+18. memoize
+19. shuffle
+20. invoke
+21. sortBy
+22. zip
+23. sortedIndex
+24. flatten
+25. intersection
+26. difference
+
+### Extra Credit
+27. indexOf (again, this time with a binary search)
+
+---
+
+## Goals
+
+In this sprint I:
+
+1. Continued to practice TDD.
+2. Got an inside view of Underscore, and got used to reading its API documentation.
+3. Became accustomed to using [NPM](https://www.npmjs.com/) to find and install JS libraries.
+4. Learned to effectively pair program, and to use Git/Github as a collaboration tool.
+5. Began to understand the functional style of programming.
+
+I heavily referenced these APIs:
 
 1. [Underscore](http://underscorejs.org/)
 2. [The Mocha Test Framework](https://mochajs.org/)
 3. [The Chai Assertion Library](http://chaijs.com/)
-
-## Advanced
-
-These are a little harder but will be very beneficial to try and complete.
-
-1. pluck
-2. reduce
-3. every
-4. some
-5. extends
-6. defaults
