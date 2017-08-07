@@ -371,4 +371,15 @@ describe('_', function() {
     });
   });
 
+// zip
+  describe('#zip', function () {
+    it('is a function', function () {
+      expect(_.zip).to.be.a('function');
+    }); 
+
+    it('zips together two arrays with elements of the same index paired together', function() {
+      expect(_.zip(['a','b','c','d'], [1,2,3])).to.eql([['a',1], ['b',2], ['c',3], ['d',undefined]]);
+    });
+  });
+
 });
