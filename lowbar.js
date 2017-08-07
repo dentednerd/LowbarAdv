@@ -221,6 +221,17 @@ _.zip = function () {
   });
 };
 
+// sortedIndex
+_.sortedIndex = function (array, obj) {
+    let value = obj;
+    let low = 0, high = array.length;
+    while (low < high) {
+        let mid = Math.floor((low + high) / 2);
+        if (array[mid] < value) low = mid + 1; else high = mid;
+    }
+    return low;
+};
+
 if (typeof module !== 'undefined') {
   module.exports = _;
 }

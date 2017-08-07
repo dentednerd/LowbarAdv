@@ -382,4 +382,14 @@ describe('_', function() {
     });
   });
 
+// sortedIndex
+  describe('#sortedIndex', function () {
+    it('is a function', function () {
+      expect(_.sortedIndex).to.be.a('function');
+    });
+    it('uses a binary search to determine the index at which the value should be inserted into the list', function () {
+      expect(_.sortedIndex([10, 20, 30, 40, 50], 35)).to.equal(3);
+    });
+  });
+
 });
