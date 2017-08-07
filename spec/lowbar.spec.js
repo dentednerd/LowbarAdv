@@ -259,4 +259,19 @@ describe('_', function() {
     });
   });
 
+// some
+  describe('#some', function() {
+    it('is a function', function() {
+      expect(_.some).to.be.a('function');
+    });
+
+    it('returns true if some list values pass the predicate test', function() {
+      expect(_.some([2, 4, 5], function(num) { return num % 2 == 0; })).to.equal(true);
+    });
+
+    it('returns false if none of the list values pass the predicate test', function() {
+      expect(_.some([1, 3, 5], function(num) { return num % 2 == 0; })).to.equal(false);
+    });
+  });
+
 });
