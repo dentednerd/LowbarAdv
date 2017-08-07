@@ -1,7 +1,7 @@
 /* global describe, it */
 var path = require('path');
 var expect = require('chai').expect;
-// var sinon = require('sinon');
+var sinon = require('sinon');
 
 var _ = require(path.join(__dirname, '..', './lowbar.js'));
 
@@ -296,5 +296,22 @@ describe('_', function() {
       expect(_.defaults(iceCream, {flavor: 'vanilla', sprinkles: 'lots'})).to.eql({flavor: 'chocolate', sprinkles: 'lots'});
     });
   });
+
+// ADVANCED LOWBAR
+
+// once
+  describe('#once', function () {
+    it('is a function', function () {
+      expect(_.once).to.be.a('function');
+    });
+    it ('should call only once', function () {
+        var spy = sinon.spy();
+        var limitTest = _.once(spy);
+        limitTest();
+        limitTest();
+        limitTest();
+     expect(spy.callCount).to.equal(1);   
+    });
+});
 
 });
